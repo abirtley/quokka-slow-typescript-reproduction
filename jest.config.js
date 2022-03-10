@@ -3,7 +3,12 @@ module.exports = {
   roots: ['<rootDir>/test'],
   testMatch: ['**/*.*test.(ts|tsx|js)'],
   transform: {
-    '\\.ts$': 'esbuild-runner/jest',
+    '\\.ts$': [ 
+      "esbuild-jest", 
+      { 
+        sourcemap: true
+      } 
+    ],
   },
   collectCoverage: true,
   // Note: seems to be a bug in Jest - despite this setting, code coverage
